@@ -13,14 +13,19 @@ An AngularJS service and a directive to quickly use the HTML5 fullscreen API and
 ```
 
 2. Set `FBAngular` as a dependency in your module
-  ```javascript
+
+```javascript
   var app = angular.module('YourApp', ['FBAngular'])
-  ```
+
+```
+
 ## Use as a directive
 Set the fullscreen to a specific element. The only requirement for the element is the ID attribute.
-  ```html
+
+```html
 	<img id="img1" src="imgs/P1030188.JPG" fullscreen />
-  ```
+```
+
 ## Use as a Service
 You can use the fullscreen service into your controller.  
 
