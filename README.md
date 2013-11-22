@@ -21,7 +21,7 @@ Set `FBAngular` as a dependency in your module:
 var app = angular.module('YourApp', ['FBAngular'])
 ```
 
-## Use as a directive
+## Fullscreen Directive
 Set the `fullscreen` attribute to a specific element:
 
 ```html
@@ -30,7 +30,7 @@ Set the `fullscreen` attribute to a specific element:
 The only requirement is to set a different ID to all elements that you will flag as `fullscreen`.
 
 
-## Use as a Service
+## Fullscreen Service
 You can also use the `Fullscreen` service into your controller:
 
 Controller:
