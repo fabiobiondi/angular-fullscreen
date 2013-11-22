@@ -22,7 +22,7 @@ var app = angular.module('YourApp', ['FBAngular'])
 ```
 
 ## Use as a directive
-Set the `fullscreen` attribute to a specific element. 
+Set the `fullscreen` attribute to a specific element:
 
 ```html
 <img id="img1" src="imgs/P1030188.JPG" fullscreen />
