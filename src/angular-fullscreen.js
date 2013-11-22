@@ -1,6 +1,3 @@
-/**
- * Fullscreen Service
- */
 var module = angular.module('FBAngular', []);
 
 module.factory('Fullscreen', function () {
