@@ -39,7 +39,6 @@ function MainCtrl($scope, Fullscreen) {
 
    $scope.goFullscreen = function () {
 
-      // Fullscreen
       if (Fullscreen.isEnabled())
          Fullscreen.cancel();
       else
