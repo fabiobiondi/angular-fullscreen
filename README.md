@@ -24,7 +24,7 @@ Set the fullscreen to a specific element. The only requirement for the element i
 ## Use as a Service
 You can use the fullscreen service into your controller.  
 
-  ```javascript
+```javascript
 function MainCtrl($scope, Fullscreen) {
 
    $scope.goFullscreen = function () {
@@ -41,8 +41,7 @@ function MainCtrl($scope, Fullscreen) {
    }
 
 }
-
-  ```
+```
 
 ## Example
 You can check out this live example here: http://jsfiddle.net/asafdav/8YQcz/6/
