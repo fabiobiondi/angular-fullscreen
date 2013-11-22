@@ -66,4 +66,5 @@ isEnable()			 | return true if fullscreen is enabled, otherwise false
 
 
 ## Example
-You can check out this live example here: http://jsfiddle.net/asafdav/8YQcz/6/
+You can check out this live example here: 
+http://www.fabiobiondi.com/demo/github/angular-fullscreen/demo/
