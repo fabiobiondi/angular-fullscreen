@@ -1,4 +1,4 @@
-Angular Fullscreen HTML5 API
+AngularJS HTML5 Fullscreen 
 =======
 
 An AngularJS service and a directive to quickly use the HTML5 fullscreen API and set the fullscreen to the document or to a specific element.
@@ -27,10 +27,7 @@ Set the fullscreen attribute to a specific element. The only requirement is to s
 ```
 
 ## Use as a Service
-Use the Fullscreen service into your controller :
-
-
-
+You can also use the Fullscreen service into your controller:
 
 Controller:
 ```javascript
@@ -60,11 +57,12 @@ HTML:
 #### Available Methods
 
 Method | Details
-:---------------------- | :------ | :------
-all()                  		 | enable fullscreen
+:---------------------- | :------ 
+all()                  		 | enable document fullscreen
+enable(elementID)	 | enable fullscreen to a specific element
 cancel()			 | disable fullscreen
 isEnable()			 | return true if fullscreen is enabled, otherwise false
-enable(elementID)	 | enable fullscreen to a specific element
+
 
 
 ## Example
