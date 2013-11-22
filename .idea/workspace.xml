@@ -34,7 +34,7 @@
           <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/demo/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="39" selection-start="372" selection-end="372" vertical-scroll-proportion="0.26288658">
+                <state line="23" column="6" selection-start="569" selection-end="569" vertical-scroll-proportion="0.40309277">
                   <folding />
                 </state>
               </provider>
@@ -88,8 +88,8 @@
         <option value="$PROJECT_DIR$/demo/js.html" />
         <option value="$PROJECT_DIR$/src/angular-fullscreen.js" />
         <option value="$PROJECT_DIR$/demo/app.js" />
-        <option value="$PROJECT_DIR$/demo/index.html" />
         <option value="$PROJECT_DIR$/demo/styles.css" />
+        <option value="$PROJECT_DIR$/demo/index.html" />
       </list>
     </option>
   </component>
@@ -348,7 +348,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="39" selection-start="372" selection-end="372" vertical-scroll-proportion="0.26288658">
+        <state line="23" column="6" selection-start="569" selection-end="569" vertical-scroll-proportion="0.40309277">
           <folding />
         </state>
       </provider>
