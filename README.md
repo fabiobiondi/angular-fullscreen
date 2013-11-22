@@ -5,14 +5,14 @@ An AngularJS service and a directive to quickly use the HTML5 fullscreen API and
 
 
 ## Usage
-1. Add AngularJS and the angular-fullscreen.js to your main file (index.html)
+Add AngularJS and the angular-fullscreen.js to your main file (index.html)
 	
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 <script src="../src/angular-fullscreen.js"></script>
 ```
 
-2. Set `FBAngular` as a dependency in your module
+Set `FBAngular` as a dependency in your module
 
 ```javascript
   var app = angular.module('YourApp', ['FBAngular'])
@@ -27,7 +27,17 @@ Set the fullscreen to a specific element. The only requirement for the element i
 ```
 
 ## Use as a Service
-You can use the fullscreen service into your controller.  
+Inject the Fullscreen service into your controller and use the following methods:
+
+#### Methods
+
+Method | Details
+:---------------------- | :------ | :------
+all()                  		 | enable fullscreen
+cancel()			 | disable fullscreen
+isEnable()			 | return true if fullscreen is enabled, otherwise false
+enable(elementID)	 | enable fullscreen to a specific element
+
 
 ```javascript
 function MainCtrl($scope, Fullscreen) {
