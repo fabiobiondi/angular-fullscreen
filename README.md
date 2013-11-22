@@ -9,7 +9,7 @@ Add AngularJS and the angular-fullscreen.js to your main file (index.html)
 	
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-<script src="../src/angular-fullscreen.js"></script>
+<script src="angular-fullscreen.js"></script>
 ```
 
 
@@ -20,14 +20,14 @@ var app = angular.module('YourApp', ['FBAngular'])
 ```
 
 ## Use as a directive
-Set the fullscreen attribute to a specific element. The only requirement is to set an ID to the element.
+Set the `fullscreen` attribute to a specific element. The only requirement is to set an ID to the element.
 
 ```html
 <img id="img1" src="imgs/P1030188.JPG" fullscreen />
 ```
 
 ## Use as a Service
-You can also use the Fullscreen service into your controller:
+You can also use the `Fullscreen` service into your controller:
 
 Controller:
 ```javascript
