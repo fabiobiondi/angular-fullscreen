@@ -1,4 +1,4 @@
-Angular Fullscreen HTML5 API service/directive
+Angular Fullscreen HTML5 API
 =======
 
 An AngularJS service and a directive to quickly use the HTML5 fullscreen API and set the fullscreen to the document or to a specific element.
@@ -20,7 +20,7 @@ var app = angular.module('YourApp', ['FBAngular'])
 ```
 
 ## Use as a directive
-Set the fullscreen attribute to a specific element. The only requirement is set an ID attribute to the element.
+Set the fullscreen attribute to a specific element. The only requirement is to set an ID to the element.
 
 ```html
 <img id="img1" src="imgs/P1030188.JPG" fullscreen />
