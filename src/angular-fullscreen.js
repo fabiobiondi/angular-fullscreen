@@ -53,7 +53,7 @@
                }
 
                $element.on('click', function (ev) {
-                  Fullscreen.enable(  document.getElementById( $attrs.id  ));
+                  Fullscreen.enable(  $element[0] );
                });
             }
          };

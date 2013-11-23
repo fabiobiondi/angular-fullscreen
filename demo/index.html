@@ -18,7 +18,7 @@
 		<div class="column">
 
 			<!-- enable/disable fullscreen using the 'Fullscreen' service -->
-			<button ng-click="goFullscreen()">Enable/Disable fullscreen</button>
+			<button ng-click="goFullscreen()">Enable/Disable Document Fullscreen</button>
 
 			<p>or click the images</p>
 
@@ -27,13 +27,14 @@
 				enable fullscreen to a specific element using the 'fullscreen' directive
 				NOTE: you must set the element ID
 			-->
-			<img id="img1" src="imgs/P1030188.JPG" fullscreen />
-			<img id="img2" src="imgs/P1030296.JPG" fullscreen />
+			<img src="imgs/P1030188.JPG" fullscreen />
+			<img src="imgs/P1030296.JPG" fullscreen />
 
 			<hr />
 			<h3>Go FullScreen Via Watched Property</h3>
-			<img src="imgs/P1030296.JPG" fullscreen="isFullScreen" />
 			<button ng-click="goFullScreenViaWatcher()">Toggle FullScreen</button>
+			<img src="imgs/P1030293.JPG" fullscreen="isFullScreen" />
+			
 
 			<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non neque eget sem luctus rutrum. Vivamus vestibulum fermentum dolor, ac rhoncus nisi blandit ac. Vestibulum in ante quis eros cursus congue id in lorem. Maecenas ut odio vitae nibh fringilla sagittis. Mauris pharetra porttitor lorem et dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae vehicula elit, sit amet cursus tellus. Integer eu tellus mauris.
