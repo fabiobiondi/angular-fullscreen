@@ -57,6 +57,28 @@ HTML:
 <button ng-click="goFullscreen()">Enable/Disable fullscreen</button>
 ```
 
+## Alternative Approach
+You may pass in the name of a scope property to watch. When the property
+becomes truthy, the element will become full screen:
+
+Controller:
+```javascript
+function MainCtrl($scope) {
+    // Initially, do not go into full screen
+    $scope.isFullscreen = false;
+
+    $scope.toggleFullScreen = function() {
+        $scope.isFullscreen = !$scope.isFullscreen;
+    }
+}
+```
+
+HTML:
+```html
+<div fullscreen="isFullscreen">Lorem ipsum...</div>
+<button ng-click="toggleFullScreen()">Toggle Full Screen</button>
+```
+
 #### Available Methods
 
 Method | Details

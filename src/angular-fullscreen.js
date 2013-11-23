@@ -40,6 +40,18 @@
 
          return {
             link : function ($scope, $element, $attrs) {
+               // Watch for changes on scope if model is provided
+               if ($attrs.fullscreen) {
+                  $scope.$watch($attrs.fullscreen, function(value) {
+                     var isEnabled = Fullscreen.isEnabled();
+                     if (value && !isEnabled) {
+                        Fullscreen.enable($element[0]);
+                     } else if (!value && isEnabled) {
+                        Fullscreen.cancel();
+                     }
+                  });
+               }
+
                $element.on('click', function (ev) {
                   Fullscreen.enable(  document.getElementById( $attrs.id  ));
                });

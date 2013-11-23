@@ -13,6 +13,12 @@ function MainCtrl($scope, Fullscreen) {
       // Set Fullscreen to a specific element (bad practice)
       // Fullscreen.enable( document.getElementById('img') )
 
-   }
+   };
+
+   $scope.isFullScreen = false;
+
+   $scope.goFullScreenViaWatcher = function() {
+      $scope.isFullScreen = !$scope.isFullScreen;
+   };
 
 }
