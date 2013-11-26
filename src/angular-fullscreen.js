@@ -5,9 +5,9 @@
       module.factory('Fullscreen', ['$document', function ($document) {
          var document = $document[0];
 
-         return {
+         var serviceInstance = {
             all: function() {
-               this.enable( document.documentElement );
+               serviceInstance.enable( document.documentElement );
             },
             enable: function(element) {
                if(element.requestFullScreen) {
@@ -33,6 +33,8 @@
                return fullscreenElement;
             }
          };
+         
+         return serviceInstance;
       }]);
 
       module.directive('fullscreen', ['Fullscreen', '$document', function(Fullscreen, $document) {
