@@ -31,6 +31,10 @@
             isEnabled: function(){
                var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
                return fullscreenElement;
+            },
+            isSupported: function(){
+                var docElm = document.documentElement;
+                return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen;
             }
          };
          
