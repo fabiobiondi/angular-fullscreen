@@ -5,9 +5,9 @@
       module.factory('Fullscreen', ['$document', function ($document) {
          var document = $document[0];
 
-         return {
+         var serviceInstance = {
             all: function() {
-               this.enable( document.documentElement );
+               serviceInstance.enable( document.documentElement );
             },
             enable: function(element) {
                if(element.requestFullScreen) {
@@ -31,8 +31,14 @@
             isEnabled: function(){
                var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
                return fullscreenElement;
+            },
+            isSupported: function(){
+                var docElm = document.documentElement;
+                return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen;
             }
          };
+         
+         return serviceInstance;
       }]);
 
       module.directive('fullscreen', ['Fullscreen', '$document', function(Fullscreen, $document) {
