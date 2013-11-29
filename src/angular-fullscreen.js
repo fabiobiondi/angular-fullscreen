@@ -5,9 +5,9 @@
       module.factory('Fullscreen', ['$document', function ($document) {
          var document = $document[0];
 
-         return {
+         var serviceInstance = {
             all: function() {
-               this.enable( document.documentElement );
+               serviceInstance.enable( document.documentElement );
             },
             enable: function(element) {
                if(element.requestFullScreen) {
@@ -16,6 +16,8 @@
                   element.mozRequestFullScreen();
                } else if(element.webkitRequestFullScreen) {
                   element.webkitRequestFullScreen();
+               } else if (element.msRequestFullscreen) {
+                  element.msRequestFullscreen();
                }
             },
             cancel: function() {
@@ -26,13 +28,17 @@
                   document.mozCancelFullScreen();
                } else if(document.webkitCancelFullScreen) {
                   document.webkitCancelFullScreen();
+               } else if (document.msExitFullscreen) {
+                  document.msExitFullscreen();
                }
             },
             isEnabled: function(){
-               var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
+               var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
                return fullscreenElement;
             }
          };
+         
+         return serviceInstance;
       }]);
 
       module.directive('fullscreen', ['Fullscreen', '$document', function(Fullscreen, $document) {
