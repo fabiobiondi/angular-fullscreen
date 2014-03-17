@@ -35,9 +35,7 @@
          };
       }]);
 
-      module.directive('fullscreen', ['Fullscreen', '$document', function(Fullscreen, $document) {
-         var document = $document[0];
-
+      module.directive('fullscreen', ['Fullscreen',  function(Fullscreen) {
          return {
             link : function ($scope, $element, $attrs) {
                // Watch for changes on scope if model is provided
@@ -50,15 +48,21 @@
                         Fullscreen.cancel();
                      }
                   });
+                  $element.on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
+                     if(!Fullscreen.isEnabled()){
+                        $scope.$evalAsync(function(){
+                           $scope[$attrs.fullscreen] = false
+                        })
+                     }
+                  })
+               } else {
+                  $element.on('click', function (ev) {
+                     Fullscreen.enable(  $element[0] );
+                  });
                }
-
-               $element.on('click', function (ev) {
-                  Fullscreen.enable(  $element[0] );
-               });
             }
          };
       }]);
-
       return module;
    };
 
