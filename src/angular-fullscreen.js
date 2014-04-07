@@ -63,6 +63,10 @@
                         Fullscreen.cancel();
                      }
                   });
+
+                  if ($attrs.onlyWatchedProperty !== undefined) {
+                     return;
+                  }
                }
 
                $element.on('click', function (ev) {

@@ -79,6 +79,14 @@ HTML:
 <button ng-click="toggleFullScreen()">Toggle Full Screen</button>
 ```
 
+If you want to disable the click fullscreen trigger for this alternative approach, add the attribute `only-watched-property` to the `fullscreen` directive, like this:
+
+```html
+<div fullscreen="isFullscreen" only-watched-property>Lorem ipsum...</div>
+```
+
+In this case, *only* a change of the property will trigger the fullscreen.
+
 #### Available Methods
 
 Method | Details
