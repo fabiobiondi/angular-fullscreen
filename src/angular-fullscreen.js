@@ -38,6 +38,10 @@
             },
             toggleAll: function(){
                 serviceInstance.isEnabled() ? serviceInstance.cancel() : serviceInstance.all();
+            },
+            isSupported: function(){
+                var docElm = document.documentElement;
+                return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen;
             }
          };
          
