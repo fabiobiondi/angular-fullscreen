@@ -48,9 +48,7 @@
          return serviceInstance;
       }]);
 
-      module.directive('fullscreen', ['Fullscreen', '$document', function(Fullscreen, $document) {
-         var document = $document[0];
-
+      module.directive('fullscreen', ['Fullscreen',  function(Fullscreen) {
          return {
             link : function ($scope, $element, $attrs) {
                // Watch for changes on scope if model is provided
@@ -59,23 +57,32 @@
                      var isEnabled = Fullscreen.isEnabled();
                      if (value && !isEnabled) {
                         Fullscreen.enable($element[0]);
+                        $element.addClass('isInFullScreen');
                      } else if (!value && isEnabled) {
                         Fullscreen.cancel();
+                        $element.removeClass('isInFullScreen');
                      }
+                  });
+                  $element.on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
+                     if(!Fullscreen.isEnabled()){
+                        $scope.$evalAsync(function(){
+                           $scope[$attrs.fullscreen] = false
+                           $element.removeClass('isInFullScreen');
+                        })
+                     }
+                  })
+               } else {
+                  $element.on('click', function (ev) {
+                     Fullscreen.enable(  $element[0] );
                   });
 
                   if ($attrs.onlyWatchedProperty !== undefined) {
                      return;
                   }
                }
-
-               $element.on('click', function (ev) {
-                  Fullscreen.enable(  $element[0] );
-               });
             }
          };
       }]);
-
       return module;
    };
 
