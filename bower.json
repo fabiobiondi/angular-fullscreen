@@ -1,6 +1,6 @@
 {
   "author": "Fabio Biondi < info@fabiobiondi.com>",
-  "name": "Angular Fullscreen",
+  "name": "angular-fullscreen",
   "description": "An AngularJS service and a directive to quickly use the HTML5 fullscreen API",
   "version": "1.0.0",
   "homepage": "https://github.com/fabiobiondi/angular-fullscreen",
