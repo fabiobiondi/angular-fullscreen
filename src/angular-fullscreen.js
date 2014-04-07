@@ -35,6 +35,9 @@
             isEnabled: function(){
                var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
                return fullscreenElement;
+            },
+            toggleAll: function(){
+                serviceInstance.isEnabled() ? serviceInstance.cancel() : serviceInstance.all();
             }
          };
          
