@@ -92,9 +92,12 @@ In this case, *only* a change of the property will trigger the fullscreen.
 Method | Details
 :---------------------- | :------ 
 all()                  		 | enable document fullscreen
+toggleAll()			 | enable or disable the document fullscreen 
 enable(elementID)	 | enable fullscreen to a specific element
 cancel()			 | disable fullscreen
 isEnabled()			 | return true if fullscreen is enabled, otherwise false
+isSupported()			 | return true if fullscreen API is supported by your browser
+
 
 
 
