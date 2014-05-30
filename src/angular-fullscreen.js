@@ -10,26 +10,25 @@
                serviceInstance.enable( document.documentElement );
             },
             enable: function(element) {
-               if(element.requestFullScreen) {
-                  element.requestFullScreen();
-               } else if(element.mozRequestFullScreen) {
+               if (element.requestFullscreen) {
+                  element.requestFullscreen();
+               } else if (element.webkitRequestFullscreen) {
+                  element.webkitRequestFullscreen();
+               } else if (element.mozRequestFullScreen) {
                   element.mozRequestFullScreen();
-               } else if(element.webkitRequestFullScreen) {
-                  element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
                } else if (element.msRequestFullscreen) {
                   element.msRequestFullscreen();
                }
             },
             cancel: function() {
-
-               if(document.cancelFullScreen) {
-                  document.cancelFullScreen();
-               } else if(document.mozCancelFullScreen) {
-                  document.mozCancelFullScreen();
-               } else if(document.webkitCancelFullScreen) {
-                  document.webkitCancelFullScreen();
+               if (document.exitFullscreen) {
+                   document.exitFullscreen();
+               } else if (document.webkitExitFullscreen) {
+                   document.webkitExitFullscreen();
+               } else if (document.mozCancelFullScreen) {
+                   document.mozCancelFullScreen();
                } else if (document.msExitFullscreen) {
-                  document.msExitFullscreen();
+                   document.msExitFullscreen();
                }
             },
             isEnabled: function(){
