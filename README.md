@@ -49,6 +49,11 @@ function MainCtrl($scope, Fullscreen) {
 
    }
 
+   //Listen on the fullscreen.change event to keep updated
+   //this will fire when anything changes the fullscreen mode
+   $scope.$on('fullscreen.change', function($event, isEnabled){
+     $scope.fullscreenEnabled = isEnabled;
+   });
 }
 ```
 
@@ -98,8 +103,11 @@ cancel()			 | disable fullscreen
 isEnabled()			 | return true if fullscreen is enabled, otherwise false
 isSupported()			 | return true if fullscreen API is supported by your browser
 
+#### Available Events
 
-
+Event | Arguments | Details
+:---------------------- | :----------  | :------ 
+fullscreen.change       | isEnabled    | fired when on fullscreen change 
 
 ## Example
 You can check out this live example here: 
