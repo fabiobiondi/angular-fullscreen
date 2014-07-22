@@ -45,7 +45,7 @@
             }
          };
          
-         document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange', function(){
+         $document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange', function(){
             $rootScope.$broadcast('fullscreen.change', serviceInstance.isEnabled());
          });
          
