@@ -2,7 +2,7 @@
    var createModule = function(angular) {
       var module = angular.module('FBAngular', []);
 
-      module.factory('Fullscreen', ['$document', function ($document) {
+      module.factory('Fullscreen', ['$document', '$rootScope', function ($document, $rootScope) {
          var document = $document[0];
 
          var serviceInstance = {
@@ -45,6 +45,10 @@
             }
          };
          
+         document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange msfullscreenchange', function(){
+            $rootScope.$broadcast('fullscreen.change', serviceInstance.isEnabled());
+         });
+         
          return serviceInstance;
       }]);
 
@@ -63,8 +67,8 @@
                         $element.removeClass('isInFullScreen');
                      }
                   });
-                  $element.on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
-                     if(!Fullscreen.isEnabled()){
+                  $scope.$on('fullscreen.change', function($event, isEnabled){
+                     if(!isEnabled){
                         $scope.$evalAsync(function(){
                            $scope[$attrs.fullscreen] = false
                            $element.removeClass('isInFullScreen');
