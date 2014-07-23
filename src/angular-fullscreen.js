@@ -5,6 +5,9 @@
       module.factory('Fullscreen', ['$document', function ($document) {
          var document = $document[0];
 
+         // ensure ALLOW_KEYBOARD_INPUT is available and enabled
+         var isKeyboardAvailbleOnFullScreen = (typeof Element !== 'undefined' && 'ALLOW_KEYBOARD_INPUT' in Element) && Element.ALLOW_KEYBOARD_INPUT;
+
          var serviceInstance = {
             all: function() {
                serviceInstance.enable( document.documentElement );
@@ -15,7 +18,12 @@
                } else if(element.mozRequestFullScreen) {
                   element.mozRequestFullScreen();
                } else if(element.webkitRequestFullScreen) {
-                  element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+                  // Safari temporary fix
+                  if (/\/[\d\.]{2}[\d\.]{2}[\d]* Safari/.test(navigator.userAgent)) {
+                     element.webkitRequestFullScreen();
+                  } else {
+                     element.webkitRequestFullScreen(isKeyboardAvailbleOnFullScreen);
+                  }
                } else if (element.msRequestFullscreen) {
                   element.msRequestFullscreen();
                }
@@ -26,8 +34,8 @@
                   document.cancelFullScreen();
                } else if(document.mozCancelFullScreen) {
                   document.mozCancelFullScreen();
-               } else if(document.webkitCancelFullScreen) {
-                  document.webkitCancelFullScreen();
+               } else if(document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen();
                } else if (document.msExitFullscreen) {
                   document.msExitFullscreen();
                }
