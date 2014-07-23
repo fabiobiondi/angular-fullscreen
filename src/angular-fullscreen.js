@@ -41,7 +41,7 @@
             },
             isSupported: function(){
                 var docElm = document.documentElement;
-                return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen;
+                return (docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen) == null;
             }
          };
          
