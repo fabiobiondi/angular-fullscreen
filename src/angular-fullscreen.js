@@ -17,12 +17,12 @@
                   element.requestFullScreen();
                } else if(element.mozRequestFullScreen) {
                   element.mozRequestFullScreen();
-               } else if(element.webkitRequestFullScreen) {
+               } else if(element.webkitRequestFullscreen) {
                   // Safari temporary fix
                   if (/\/[\d\.]{2}[\d\.]{2}[\d]* Safari/.test(navigator.userAgent)) {
-                     element.webkitRequestFullScreen();
+                     element.webkitRequestFullscreen();
                   } else {
-                     element.webkitRequestFullScreen(isKeyboardAvailbleOnFullScreen);
+                     element.webkitRequestFullscreen(isKeyboardAvailbleOnFullScreen);
                   }
                } else if (element.msRequestFullscreen) {
                   element.msRequestFullscreen();
@@ -49,7 +49,7 @@
             },
             isSupported: function(){
                 var docElm = document.documentElement;
-                return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen;
+                return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullscreen || docElm.msRequestFullscreen;
             }
          };
 
