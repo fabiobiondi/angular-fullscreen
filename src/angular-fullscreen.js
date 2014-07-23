@@ -44,7 +44,7 @@
                 return docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullScreen || docElm.msRequestFullscreen;
             }
          };
-         
+
          return serviceInstance;
       }]);
 
@@ -72,13 +72,13 @@
                      }
                   })
                } else {
-                  $element.on('click', function (ev) {
-                     Fullscreen.enable(  $element[0] );
-                  });
-
                   if ($attrs.onlyWatchedProperty !== undefined) {
                      return;
                   }
+
+                  $element.on('click', function (ev) {
+                     Fullscreen.enable(  $element[0] );
+                  });
                }
             }
          };
