@@ -63,7 +63,9 @@
                         $element.removeClass('isInFullScreen');
                      }
                   });
-                  $element.on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
+                  // listen event on document instead of element to avoid firefox limitation
+                  // see https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
+                  angular.element(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
                      if(!Fullscreen.isEnabled()){
                         $scope.$evalAsync(function(){
                            $scope[$attrs.fullscreen] = false
