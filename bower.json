@@ -14,6 +14,9 @@
     "html5",
     "angularjs"
   ],
+  "ignore": [
+    "demo"
+  ],
   "dependencies": {
     "angular": "~1.2.1"
   },
