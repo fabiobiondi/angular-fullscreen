@@ -110,4 +110,4 @@ http://www.fabiobiondi.com/demo/github/angular-fullscreen/demo/
 ## License
 The MIT License
 
-Copyright (c) 2014 [Fabio Biondi](http://www.fabiobiondi.com)
+Copyright (c) 2014 [Fabio Biondi](http://www.fabiobiondi.com) & [Matteo Ronchi](http://it.linkedin.com/in/matteoronchi) 
