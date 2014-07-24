@@ -2,13 +2,22 @@
    var createModule = function(angular) {
       var module = angular.module('FBAngular', []);
 
-      module.factory('Fullscreen', ['$document', function ($document) {
+      module.factory('Fullscreen', ['$document', '$rootScope', function ($document,$rootScope) {
          var document = $document[0];
 
          // ensure ALLOW_KEYBOARD_INPUT is available and enabled
          var isKeyboardAvailbleOnFullScreen = (typeof Element !== 'undefined' && 'ALLOW_KEYBOARD_INPUT' in Element) && Element.ALLOW_KEYBOARD_INPUT;
 
+         var emitter = $rootScope.$new();
+
+         // listen event on document instead of element to avoid firefox limitation
+         // see https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
+         $document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
+            emitter.$emit('FBFullscreen.change', serviceInstance.isEnabled());
+         })
+
          var serviceInstance = {
+            $on: emitter.$on.bind(emitter),
             all: function() {
                serviceInstance.enable( document.documentElement );
             },
@@ -29,7 +38,6 @@
                }
             },
             cancel: function() {
-
                if(document.cancelFullScreen) {
                   document.cancelFullScreen();
                } else if(document.mozCancelFullScreen) {
@@ -57,7 +65,7 @@
          return serviceInstance;
       }]);
 
-      module.directive('fullscreen', ['Fullscreen',  function(Fullscreen) {
+      module.directive('fullscreen', ['Fullscreen', function(Fullscreen) {
          return {
             link : function ($scope, $element, $attrs) {
                // Watch for changes on scope if model is provided
@@ -72,16 +80,22 @@
                         $element.removeClass('isInFullScreen');
                      }
                   });
-                  // listen event on document instead of element to avoid firefox limitation
-                  // see https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
-                  angular.element(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
-                     if(!Fullscreen.isEnabled()){
+
+                  // Listen on the `FBFullscreen.change`
+                  // the event will fire when anything changes the fullscreen mode
+                  var removeFullscreenHandler = Fullscreen.$on('FBFullscreen.change', function(evt, isFullscreenEnabled){
+                     if(!isFullscreenEnabled){
                         $scope.$evalAsync(function(){
                            $scope[$attrs.fullscreen] = false
                            $element.removeClass('isInFullScreen');
                         })
                      }
-                  })
+                  });
+
+                  $scope.$on('$destroy', function() {
+                     removeFullscreenHandler();
+                  });
+
                } else {
                   if ($attrs.onlyWatchedProperty !== undefined) {
                      return;

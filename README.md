@@ -14,7 +14,6 @@ Add AngularJS and the angular-fullscreen.js to your main file (index.html)
 <script src="angular-fullscreen.js"></script>
 ```
 
-
 Set `FBAngular` as a dependency in your module:
 
 ```javascript
@@ -98,8 +97,11 @@ cancel()			 | disable fullscreen
 isEnabled()			 | return true if fullscreen is enabled, otherwise false
 isSupported()			 | return true if fullscreen API is supported by your browser
 
+#### Available Events
 
-
+Event | Arguments | Details
+:---------------------- | :----------  | :------ 
+FBFullscreen.change     | isEnabled    | fired when fullscreen state change 
 
 ## Example
 You can check out this live example here: 
