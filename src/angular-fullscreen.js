@@ -12,9 +12,9 @@
 
          // listen event on document instead of element to avoid firefox limitation
          // see https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
-         $document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange', function(){
+         $document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function(){
             emitter.$emit('FBFullscreen.change', serviceInstance.isEnabled());
-         })
+         });
 
          var serviceInstance = {
             $on: emitter.$on.bind(emitter),
@@ -86,9 +86,9 @@
                   var removeFullscreenHandler = Fullscreen.$on('FBFullscreen.change', function(evt, isFullscreenEnabled){
                      if(!isFullscreenEnabled){
                         $scope.$evalAsync(function(){
-                           $scope[$attrs.fullscreen] = false
+                           $scope[$attrs.fullscreen] = false;
                            $element.removeClass('isInFullScreen');
-                        })
+                        });
                      }
                   });
 
