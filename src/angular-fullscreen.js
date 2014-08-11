@@ -17,7 +17,7 @@
          });
 
          var serviceInstance = {
-            $on: emitter.$on.bind(emitter),
+            $on: angular.bind(emitter, emitter.$on),
             all: function() {
                serviceInstance.enable( document.documentElement );
             },
