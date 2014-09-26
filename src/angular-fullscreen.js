@@ -86,7 +86,7 @@
                   var removeFullscreenHandler = Fullscreen.$on('FBFullscreen.change', function(evt, isFullscreenEnabled){
                      if(!isFullscreenEnabled){
                         $scope.$evalAsync(function(){
-                           $scope[$attrs.fullscreen] = false;
+                           $scope.$eval($attrs.fullscreen + '= false');
                            $element.removeClass('isInFullScreen');
                         });
                      }
