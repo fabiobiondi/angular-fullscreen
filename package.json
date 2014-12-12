@@ -10,6 +10,5 @@
     "type": "git",
     "url": "git://github.com/fabiobiondi/angular-fullscreen"
   },
-  "license": "MIT",
-  "homepage": "https://github.com/dansomething/angular-fullscreen"
+  "license": "MIT"
 }
