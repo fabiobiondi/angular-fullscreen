@@ -103,9 +103,7 @@ Event | Arguments | Details
 :---------------------- | :----------  | :------ 
 FBFullscreen.change     | isEnabled    | fired when fullscreen state change 
 
-## Example
-You can check out this live example here: 
-http://www.fabiobiondi.com/demo/github/angular-fullscreen/demo/
+
 
 ## License
 The MIT License
