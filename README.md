@@ -1,3 +1,6 @@
+## This repo is not maintaned anymore 
+---
+
 AngularJS HTML5 Fullscreen 
 =======
 
