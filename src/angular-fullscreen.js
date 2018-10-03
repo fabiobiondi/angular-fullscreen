@@ -53,12 +53,15 @@
                return fullscreenElement ? true : false;
             },
             toggleAll: function(){
-                serviceInstance.isEnabled() ? serviceInstance.cancel() : serviceInstance.all();
+               serviceInstance.isEnabled() ? serviceInstance.cancel() : serviceInstance.all();
             },
             isSupported: function(){
-                var docElm = document.documentElement;
-                var requestFullscreen = docElm.requestFullScreen || docElm.mozRequestFullScreen || docElm.webkitRequestFullscreen || docElm.msRequestFullscreen;
-                return requestFullscreen ? true : false;
+               var docElm = document.documentElement;
+               var fullScreenEnabled = (docElm.requestFullScreen && document.fullscreenEnabled) ||
+                  (docElm.mozRequestFullScreen && document.mozFullScreenEnabled) ||
+                  (docElm.webkitRequestFullscreen && document.webkitFullscreenEnabled) ||
+                  (docElm.msRequestFullscreen && document.msFullscreenEnabled);
+               return fullScreenEnabled ? true : false;
             }
          };
 
