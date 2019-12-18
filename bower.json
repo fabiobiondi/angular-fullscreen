@@ -2,11 +2,11 @@
   "author": "Fabio Biondi < info@fabiobiondi.com>",
   "name": "angular-fullscreen",
   "description": "An AngularJS service and a directive to quickly use the HTML5 fullscreen API",
-  "version": "1.0.1",
-  "homepage": "https://github.com/fabiobiondi/angular-fullscreen",
+  "version": "1.0.2",
+  "homepage": "https://github.com/E-IS/angular-fullscreen",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fabiobiondi/angular-fullscreen"
+    "url": "git://github.com/E-IS/angular-fullscreen"
   },
   "main": "./src/angular-fullscreen.js",
   "keywords": [
