@@ -15,10 +15,10 @@
 
          var serviceInstance = {
             $on: angular.bind(emitter, emitter.$on),
-            all: function() {
-               serviceInstance.enable( $document.length && $document[0].body || document.documentElement);
+            all: function(options) {
+               serviceInstance.enable( document.documentElement, options);
             },
-            enable: function(element) {
+            enable: function(element, options) {
                if(element.requestFullScreen) {
                   element.requestFullScreen(options);
                } else if(element.mozRequestFullScreen) {
