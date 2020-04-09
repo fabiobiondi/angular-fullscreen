@@ -11,13 +11,16 @@
     "type": "git",
     "url": "git@github.com:e-is/angular-fullscreen-toggle.git"
   },
+  "scripts": {
+    "clean": "trash dist/**"
+  },
   "main": "./dist/angular-fullscreen-toggle",
   "bugs": {
     "url": "https://github.com/e-is/angular-fullscreen-toggle/issues"
   },
   "homepage": "https://github.com/e-is/angular-fullscreen-toggle",
   "dependencies": {
-    "angular": "^1.2.1"
+    "angular": "^1.5.11"
   },
   "devDependencies": {
     "del": "^3.0.0",
