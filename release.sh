@@ -105,7 +105,7 @@ fi
 # Create the tag
 cd ${PROJECT_DIR} || exit 1
 git reset HEAD
-git add package.json release.sh dist/angular-expose-api.js dist/angular-expose-api.min.js dist/maps/angular-expose-api.min.js.map
+git add package.json release.sh dist/angular-fullscreen-toggle.js dist/angular-fullscreen-toggle.min.js dist/maps/angular-fullscreen-toggle.min.js.map
 [[ $? -ne 0 ]] && exit 1 # Stop if failed
 git commit -m "${VERSION}"
 git tag -f -a "${VERSION}" -m "${description}"
