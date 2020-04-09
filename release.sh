@@ -105,7 +105,7 @@ fi
 # Create the tag
 cd ${PROJECT_DIR} || exit 1
 git reset HEAD
-git add package.json release.sh dist/angular-fullscreen-toggle.js dist/angular-fullscreen-toggle.min.js dist/maps/angular-fullscreen-toggle.min.js.map
+git add package.json release.sh dist/${PROJECT_NAME}.js dist/${PROJECT_NAME}.min.js dist/maps/${PROJECT_NAME}.min.js.map
 [[ $? -ne 0 ]] && exit 1 # Stop if failed
 git commit -m "${VERSION}"
 git tag -f -a "${VERSION}" -m "${description}"
@@ -125,5 +125,5 @@ if [[ "$1" == "pre" ]]; then
 else
   npm login
   [[ $? -ne 0 ]] && exit 1 # Stop if failed
-  npm publish angular-fullscreen-toggle-${VERSION}.tar.gz --access public
+  npm publish ${PROJECT_NAME}-${VERSION}.tar.gz --access public
 fi

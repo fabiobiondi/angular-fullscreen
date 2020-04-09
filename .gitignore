@@ -1,0 +1,5 @@
+/.idea
+/node_modules
+
+/angular-fullscreen-toggle*
+angular-fullscreen-toggle-*.tar.gz

@@ -22,6 +22,8 @@ const gulp = require('gulp'),
 function clean() {
   return del([
     './dist',
+    './angular-fullscreen-*',
+    './angular-fullscreen-*.tar.gz',
   ]);
 }
 
@@ -76,13 +78,40 @@ function minify(done) {
   return done();
 }
 
-function archive() {
+function copyArchiveFiles() {
+  log(colors.green('Creating tarball...'));
   const project = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+  const basename = project.name + '-' + project.version;
 
   return gulp.src(['./dist/**/*.*', 'package.json', 'bower.json', 'README.md', 'LICENSE'], {base: '.'})
-    .pipe(tar(project.name + '-' + project.version+'.tar'))
+    .pipe(gulp.dest('./' + basename));
+}
+
+
+function createArchive() {
+  const project = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+  const basename = project.name + '-' + project.version;
+
+  return gulp.src(['./' + basename + '/**/*.*'], {base: '.'})
+    .pipe(tar(basename+'.tar'))
     .pipe(gzip())
     .pipe(gulp.dest('./'));
+}
+
+function cleanArchiveFiles() {
+  const project = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+  const basename = project.name + '-' + project.version;
+
+  return del([
+    './' + basename
+  ]);
+}
+
+function archive(done) {
+  const project = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+  const basename = project.name + '-' + project.version;
+  log(colors.green('Tarball created at: ' + basename + '.tar.gz'));
+  done();
 }
 
 /* --------------------------------------------------------------------------
@@ -92,9 +121,12 @@ function archive() {
 gulp.task('clean', clean);
 gulp.task('copyFiles', gulp.series('clean', copyFiles));
 gulp.task('minify', gulp.series('copyFiles', minify));
-
-gulp.task('archive', gulp.series('minify', archive));
 gulp.task('build', gulp.series('minify'));
+
+gulp.task('copyArchiveFiles', gulp.series('build', copyArchiveFiles));
+gulp.task('createArchive', gulp.series('copyArchiveFiles', createArchive));
+gulp.task('cleanArchiveFiles', gulp.series('createArchive', cleanArchiveFiles));
+gulp.task('archive', gulp.series('cleanArchiveFiles', archive));
 
 gulp.task('default', gulp.series('minify')); // Default task
 
