@@ -1,6 +1,6 @@
 (function(window) {
    var createModule = function(angular) {
-      var module = angular.module('FBAngular', []);
+      var module = angular.module('angular-fullscreen-toggle', []);
 
       module.factory('Fullscreen', ['$document', '$rootScope', function ($document,$rootScope) {
          var document = $document[0];
@@ -10,7 +10,7 @@
          // listen event on document instead of element to avoid firefox limitation
          // see https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
          $document.on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function(){
-            emitter.$emit('FBFullscreen.change', serviceInstance.isEnabled());
+            emitter.$emit('ngFullscreen.change', serviceInstance.isEnabled());
          });
 
          var serviceInstance = {
@@ -73,9 +73,9 @@
                      }
                   });
 
-                  // Listen on the `FBFullscreen.change`
+                  // Listen on the `ngFullscreen.change`
                   // the event will fire when anything changes the fullscreen mode
-                  var removeFullscreenHandler = Fullscreen.$on('FBFullscreen.change', function(evt, isFullscreenEnabled){
+                  var removeFullscreenHandler = Fullscreen.$on('ngFullscreen.change', function(evt, isFullscreenEnabled){
                      if(!isFullscreenEnabled){
                         $scope.$evalAsync(function(){
                            $scope.$eval($attrs.fullscreen + '= false');
@@ -104,7 +104,7 @@
    };
 
    if (typeof define === "function" && define.amd) {
-      define("FBAngular", ['angular'], function (angular) { return createModule(angular); } );
+      define("angular-fullscreen-toggle", ['angular'], function (angular) { return createModule(angular); } );
    } else if (typeof module !== 'undefined' && module.exports) {
       module.exports = createModule(window.angular).name;
    } else {

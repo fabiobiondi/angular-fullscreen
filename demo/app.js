@@ -1,24 +1,29 @@
-var app = angular.module('DemoApp', ['FBAngular']);
 
-function MainCtrl($scope, Fullscreen) {
+(function() {
+   'use strict';
 
-   $scope.goFullscreen = function () {
+   var app = angular.module('DemoApp', ['angular-fullscreen-toggle']);
 
-      // Fullscreen
-      if (Fullscreen.isEnabled())
-         Fullscreen.cancel();
-      else
-         Fullscreen.all();
+   app.controller('MainCtrl', ['$scope', '$log', 'Fullscreen', function ($scope, $log, Fullscreen) {
 
-      // Set Fullscreen to a specific element (bad practice)
-      // Fullscreen.enable( document.getElementById('img') )
+      $scope.goFullscreen = function () {
 
-   };
+         // Fullscreen
+         if (Fullscreen.isEnabled())
+            Fullscreen.cancel();
+         else
+            Fullscreen.all();
 
-   $scope.isFullScreen = false;
+         // Set Fullscreen to a specific element (bad practice)
+         // Fullscreen.enable( document.getElementById('img') )
 
-   $scope.goFullScreenViaWatcher = function() {
-      $scope.isFullScreen = !$scope.isFullScreen;
-   };
+      };
 
-}
+      $scope.isFullScreen = false;
+
+      $scope.goFullScreenViaWatcher = function() {
+         $scope.isFullScreen = !$scope.isFullScreen;
+      };
+   }]);
+})();
+
