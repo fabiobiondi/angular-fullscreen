@@ -1,4 +1,4 @@
-/* angular-fullscreen-toggle v1.0.3 - source code: git@github.com:e-is/angular-fullscreen-toggle.git */
+/* angular-fullscreen-toggle v1.0.4 - source code: git@github.com:e-is/angular-fullscreen-toggle.git */
 
 (function(window) {
    var createModule = function(angular) {

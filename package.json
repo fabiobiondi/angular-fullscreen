@@ -1,6 +1,6 @@
 {
   "name": "angular-fullscreen-toggle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An AngularJS service and a directive to quickly use the HTML5 fullscreen API",
   "license": "MIT",
   "author": {
