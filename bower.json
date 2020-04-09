@@ -1,14 +1,14 @@
 {
-  "author": "Fabio Biondi < info@fabiobiondi.com>",
-  "name": "angular-fullscreen",
+  "author": "Fabio Biondi <info@fabiobiondi.com>",
+  "name": "angular-fullscreen-toggle",
   "description": "An AngularJS service and a directive to quickly use the HTML5 fullscreen API",
-  "version": "1.0.1",
-  "homepage": "https://github.com/fabiobiondi/angular-fullscreen",
+  "version": "1.0.3",
+  "homepage": "https://github.com/e-is/angular-fullscreen",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fabiobiondi/angular-fullscreen"
+    "url": "git://github.com/e-is/angular-fullscreen-toggle"
   },
-  "main": "./src/angular-fullscreen.js",
+  "main": "./dist/angular-fullscreen-toggle.js",
   "keywords": [
     "fullscreen api",
     "html5",
@@ -18,7 +18,8 @@
     "demo"
   ],
   "dependencies": {
-    "angular": ">=1.2.1"
+    "angular": ">=1.5.11"
   },
   "license": "MIT"
 }
+

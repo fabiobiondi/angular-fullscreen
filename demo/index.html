@@ -3,8 +3,8 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-	<script src="../src/angular-fullscreen.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.js"></script>
+	<script src="../src/angular-fullscreen-toggle.js"></script>
 	<script src="app.js"></script>
 </head>
 
@@ -28,14 +28,14 @@
 				enable fullscreen to a specific element using the 'fullscreen' directive
 				NOTE: you must set the element ID
 			-->
-			<img src="imgs/P1030188.JPG" fullscreen />
-			<img src="imgs/P1030296.JPG" fullscreen />
+			<img src="imgs/P1030188.jpg" fullscreen />
+			<img src="imgs/P1030296.jpg" fullscreen />
 
 			<hr />
 			<h3>Set an image in fullScreen mode changing the model and disable click on it</h3>
 			<button ng-click="goFullScreenViaWatcher()">Toggle FullScreen</button>
 			
-			<img src="imgs/P1030293.JPG" fullscreen="isFullScreen" only-watched-property/>
+			<img src="imgs/P1030293.jpg" fullscreen="isFullScreen" only-watched-property/>
 			
 
 			<p>

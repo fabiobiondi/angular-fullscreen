@@ -1,26 +1,26 @@
-## This repo is not maintaned anymore 
----
 
 AngularJS HTML5 Fullscreen 
 =======
 
 An AngularJS service and a directive to quickly use the HTML5 fullscreen API and set the fullscreen to the document or to a specific element.
 
+Project based on https://github.com/fabiobiondi/angular-fullscreen (not maintained)
+
 ## Example
 Live demo: http://www.fabiobiondi.com/demo/github/angular-fullscreen/demo/
 
 ## Usage
-Add AngularJS and the angular-fullscreen.js to your main file (index.html)
+Add AngularJS and the angular-fullscreen-toggle.js to your main file (index.html)
 	
 ```html
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-<script src="angular-fullscreen.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.js"></script>
+<script src="angular-fullscreen-toggle.js"></script>
 ```
 
-Set `FBAngular` as a dependency in your module:
+Set `angular-fullscreen-toggle` as a dependency in your module:
 
 ```javascript
-var app = angular.module('YourApp', ['FBAngular'])
+var app = angular.module('YourApp', ['angular-fullscreen-toggle'])
 ```
 
 ## Fullscreen Directive
@@ -104,7 +104,7 @@ isSupported()			 | return true if fullscreen API is supported by your browser
 
 Event | Arguments | Details
 :---------------------- | :----------  | :------ 
-FBFullscreen.change     | isEnabled    | fired when fullscreen state change 
+ngFullscreen.change     | isEnabled    | fired when fullscreen state change 
 
 ## Example
 You can check out this live example here: 
@@ -112,5 +112,3 @@ http://www.fabiobiondi.com/demo/github/angular-fullscreen/demo/
 
 ## License
 The MIT License
-
-Copyright (c) 2014 [Fabio Biondi](http://www.fabiobiondi.com) & [Matteo Ronchi](http://it.linkedin.com/in/matteoronchi) 

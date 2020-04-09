@@ -1,19 +1,44 @@
 {
-  "name": "angular-fullscreen",
-  "version": "1.0.1",
+  "name": "angular-fullscreen-toggle",
+  "version": "1.0.4",
   "description": "An AngularJS service and a directive to quickly use the HTML5 fullscreen API",
   "license": "MIT",
   "author": {
-    "name": "Fabio Biondi",
-    "email": "info@fabiobiondi.com"
-  },
+      "name": "Fabio Biondi",
+      "email": "info@fabiobiondi.com"
+    },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fabiobiondi/angular-fullscreen.git"
+    "url": "git@github.com:e-is/angular-fullscreen-toggle.git"
   },
-  "main": "./src/angular-fullscreen",
+  "scripts": {
+    "clean": "trash dist/**"
+  },
+  "main": "./dist/angular-fullscreen-toggle",
   "bugs": {
-    "url": "https://github.com/fabiobiondi/angular-fullscreen/issues"
+    "url": "https://github.com/e-is/angular-fullscreen-toggle/issues"
   },
-  "homepage": "https://github.com/fabiobiondi/angular-fullscreen"
+  "homepage": "https://github.com/e-is/angular-fullscreen-toggle",
+  "dependencies": {
+    "angular": "^1.5.11"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "event-stream": "^3.3.4",
+    "gulp": "^4.0.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-tar": "^3.1.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-header": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify-es": "^2.0.0",
+    "jshint": "^2.10.3",
+    "yargs": "^5.0.0",
+    "vinyl-fs": "^3.0.3"
+  },
+  "engines": {
+    "yarn": ">= 1.22.0",
+    "npm": ">= 6.0.0"
+  }
 }
