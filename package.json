@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git@github.com:e-is/angular-fullscreen-toggle.git"
   },
-  "main": "./src/angular-fullscreen-toggle",
+  "main": "./dist/angular-fullscreen-toggle",
   "bugs": {
     "url": "https://github.com/e-is/angular-fullscreen-toggle/issues"
   },
@@ -21,20 +21,18 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "delete-empty": "^0.1.3",
     "event-stream": "^3.3.4",
-    "glob": "^5.0.15",
-    "graceful-fs": "^4.2.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-jshint": "^2.1.0",
+    "gulp-tar": "^3.1.0",
+    "gulp-gzip": "^1.4.2",
     "gulp-rename": "^1.2.0",
     "gulp-header": "^1.2.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify-es": "^2.0.0",
     "jshint": "^2.10.3",
-    "playup": "^1.1.0",
-    "vinyl-fs": "^3.0.3",
-    "yargs": "^5.0.0"
+    "yargs": "^5.0.0",
+    "vinyl-fs": "^3.0.3"
   },
   "engines": {
     "yarn": ">= 1.22.0",

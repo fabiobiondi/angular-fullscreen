@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/e-is/angular-fullscreen-toggle"
   },
-  "main": "./src/angular-fullscreen-toggle.js",
+  "main": "./dist/angular-fullscreen-toggle.js",
   "keywords": [
     "fullscreen api",
     "html5",
