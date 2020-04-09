@@ -91,7 +91,7 @@ case "$1" in
 esac
 
 # Launch build
-gulp build --release
+gulp archive --release
 [[ $? -ne 0 ]] && exit 1 # Stop if failed
 
 
@@ -125,5 +125,5 @@ if [[ "$1" == "pre" ]]; then
 else
   npm login
   [[ $? -ne 0 ]] && exit 1 # Stop if failed
-  npm publish . --access public
+  npm publish angular-fullscreen-toggle-${VERSION}.tar.gz --access public
 fi
